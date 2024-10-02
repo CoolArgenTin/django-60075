@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.8">
+    <title>Document</title>
+</head>
+<body>
+    <H2>
+        ES MUY BUENO, ES MUY BUENO
+    </H2>
+    <H3>{{fecha_actual}}</H3>
+    <p>LISTADO DE NUMEROS QUE ODIO SIN MOTIVO ALGUNO:</p>
+    <ul>
+        {% for num in numeros %}
+        {% if num < 5 %}
+        <li>{{num}}</li>
+        {% elif num == 5 %}
+        <li>EL APLAUSO SEÑOREE</li>
+        {% elif num == 6 %}
+        <li>menos mal q salio</li>
+        {% else %}
+        <li>ODIO A ESOS NUMEROS</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
