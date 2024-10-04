@@ -3,12 +3,14 @@ from django.http import HttpResponse
 from django.template import Template, Context, loader
 from datetime import datetime
 from django.shortcuts import render
+from inicio.models import Auto
+
 
 def mi_view(request):
     return HttpResponse("SOY UNA VISTA (view) JAJA")
 
 def inicio(request):
-    return HttpResponse("<h1> PANTALLA DE INICIO TODO PIOLA </h1>")
+    return render(request, "index.html")
 
 def dataxd(request):
     return HttpResponse("XD")
@@ -51,3 +53,9 @@ def primer_template(request):
     
     return HttpResponse(render_template)
 
+def crear_auto(request, marca, modelo, anio):
+    
+    auto = Auto(marca=marca, modelo=modelo, edad=anio)
+    auto.save()
+    
+    return render(request, "crear_auto.html", {"auto": auto})

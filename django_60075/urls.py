@@ -19,14 +19,15 @@ from django.urls import path, include
 from inicio.views import dataxd
 from inicio.views import primer_template
 from inicio.views import segundo_template
-
+from inicio.views import crear_auto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include ("inicio.urls")),
     path("datos/<nombre>", dataxd),
     path("primer-template", primer_template),
-    path("segundo-template", segundo_template)
+    path("segundo-template", segundo_template),
+    path("auto/<marca>/<modelo>/<anio>", crear_auto)
 ]
 
 
